@@ -1,0 +1,86 @@
+#1.prompt information for print
+print("="*50)
+print("     Name Card Management V1.0")
+print("1:Add a new name card")
+print("2:Delete a name card")
+print("3:Change a name card")
+print("4:Search a name card")
+print("5:Display all name card")
+print("6:Exit system")
+print("="*50)
+#2.Catch client's choice
+#to store name card
+nameCard_info = [{'name':'a','qq':'1','wechat':'11','addr':'111'}]
+
+
+while True:
+#nameList = ["Ted","Peter","Jerry","Tom","Lily","Lucy"]
+    num = int(input("Please enter your No.:"))
+
+    #3.Reaction depend on client's choice
+
+    if num==1:
+        new_name = input("Please enter the new name:")
+        new_qq = input("Please enter the new qq:")
+        new_wechat = input("Please enter the new wechat:")
+        new_addr = input("Please enter the new addr:")
+       # nameList.append(temp)
+       # for tempName in nameList:
+       #     print(tempName)
+        #define a new dictionary,to store a new name card
+
+        new_info = {}
+        new_info["name"] = new_name
+        new_info["qq"] = new_qq
+        new_info["wechat"] = new_wechat
+        new_info["addr"] = new_addr
+        
+        #add a dictionary to list
+        nameCard_info.append(new_info)
+        
+        #print(nameCard_info)#for test
+
+    elif num==2:
+        
+        delete_name = input("Please enter the name you want to delete:")
+       
+        delete_flag = 0#don't macth
+        print("Name\tQQ\tWechat\tAddr")
+        for temp in nameCard_info.keys():
+            if delete_name == temp["name"]:
+                del nameCard_info['delete_name']
+                print("%s\t%s\t%s\t%s"%(temp["name"],temp["qq"],temp["wechat"],temp["addr"]))
+                delete_flag = 1#find it
+                break
+        #whatif find it
+        if delete_flag == 0:
+            print("Oops!don't find the name.")
+    elif num==3:
+        pass
+    elif num==4:
+
+        
+        find_name = input("Please enter the name:")
+       
+        find_flag = 0#don't macth
+        print("Name\tQQ\tWechat\tAddr")
+        for temp in nameCard_info:
+            if find_name == temp["name"]:
+                print("%s\t%s\t%s\t%s"%(temp["name"],temp["qq"],temp["wechat"],temp["addr"]))
+                find_flag = 1#find it
+                break
+        #whatif find it
+        if find_flag == 0:
+            print("Oops!don't find the name.")
+    elif num==5:
+        print("Name\tQQ\tWechat\tAddr")
+        for temp in nameCard_info:
+            print("%s\t%s\t%s\t%s"%(temp["name"],temp["qq"],temp["wechat"],temp["addr"]))
+    elif num==6:
+        break
+    else:
+        print("Please check your No.!")
+        
+
+
+    print("")
