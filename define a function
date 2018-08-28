@@ -1,8 +1,9 @@
+#coding=utf-8
 def fun1(a,b,c):
     result = a +b - c
     print('result:%d'%result)
     return result
-a = int(input('please enter a
+a = int(input('please enter a:'))
 b = int(input('please enter b:'))
-c = int(input('pleaseenter c:'))
+c = int(input('please enter c:'))
 fun1(a,b,c)
