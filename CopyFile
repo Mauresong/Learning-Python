@@ -1,0 +1,15 @@
+#1.get the file name
+old_file_name = input('please enter the old file name:')
+#2.open the file
+old_file = open(old_file_name,'r')
+
+#3.creat a new file
+new_file = open('newfile.txt','w')
+
+#4.copy the old file into the new file
+content = old_file.read()
+new_file.write(content)
+
+#5.close the 2 files
+old_file.close()
+new_file.close()
