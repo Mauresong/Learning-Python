@@ -1,0 +1,20 @@
+import os
+
+#1. get the folder name need to rename
+
+folder_name = input('please enter the folder name:')
+
+#2. get all of the file names in the folder
+
+file_name = os.listdir(folder_name)
+
+#os.chdir(folder_name)
+
+#3. rename
+
+for name in file_name:
+    print(name)
+    old_file_name = folder_name+'/'+name
+    new_file_name = folder_name+'/'+'[Nichoals]'+name
+    #os.rename(name,'[Nicholas]-'+name)
+    os.rename(old_file_name,new_file_name)
