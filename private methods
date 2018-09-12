@@ -1,0 +1,15 @@
+class Dog:
+    #def __init__(self,new_name):
+     #   self.name = new_name
+      #  self.__age = 0 #define a private field name with age
+
+    def __send_msg(self):
+        print('-------sending message------')
+    def send_msg(self,new_balance):
+        if new_balance > 10000:
+            self.__send_msg()
+        else:
+            print('The balance is insuffucient, please recharge first.')
+
+dog = Dog()
+dog.send_msg(1000)
