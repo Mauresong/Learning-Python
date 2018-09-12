@@ -1,0 +1,26 @@
+class Dog:
+    def __init__(self,new_name):
+        self.name = new_name
+        self._age = 0 #define a private field name with age
+    def set_age(self,new_age):
+        if new_age > 0 and new_age <=100:
+            self.age = new_age
+        else:
+            self.age = 'error'
+
+    def get_age(self):
+        return self.age
+
+dog = Dog('White')
+
+#dog.age = -10
+#dog.name = 'White'
+
+#print(dog.age)
+
+
+dog.set_age(10)
+age = dog.get_age()
+print(age)
+#dog.get_name()
+print(dog._age)
