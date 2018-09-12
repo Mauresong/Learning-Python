@@ -1,0 +1,44 @@
+class Home:
+    def __init__(self,new_area,new_type,new_addr):
+        self.area = new_area
+        self.type = new_type
+        self.addr = new_addr
+        self.left_area = new_area
+        self.contain_items = []
+    def __str__(self):
+        msg = 'the total area of the house is %d,the remain area is %d,the type is %s,the address is %s'%(self.area,self.left_area,self.type,self.addr)
+        msg += ' the house has %s init right now'%(str(self.contain_items))
+        return msg
+
+    def add_item(self,item):
+        #self.left_area -= item.size
+        #self.contain_items.append(item.name)
+        self.left_area -= item.get_size()
+        self.contain_items.append(item.get_name())
+class Bed:
+    def __init__(self,new_name,new_size):
+        self.name = new_name
+        self.size = new_size
+    def __str__(self):
+        return 'the bed name is %s,its size is %d'%(self.name,self.size)
+    def get_size(self):
+        return self.size
+    def get_name(self):
+        return self.name
+house = Home(129,'three rooms one hall','1625 charleston road b44')
+
+print(house)
+
+bed1 = Bed('Simmons mattress',4)
+print(bed1)
+
+house.add_item(bed1)
+print(house)
+
+bed2 = Bed('Queen bed',8)
+house.add_item(bed2)
+print(house)
+
+bed3 = Bed('King bed',12)
+house.add_item(bed3)
+print(house)
