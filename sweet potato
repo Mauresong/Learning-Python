@@ -1,0 +1,51 @@
+class SweetPotato:
+
+    
+    def __init__(self):
+        self.cookedString = 'Raw'
+        self.cookedLevel = 0
+        self.condiments = []
+    def __str__(self):
+        return 'Sweet potato is %s(%d),with condiments %s'%(self.cookedString,self.cookedLevel,str(self.condiments))
+    
+    def cook(self,cooked_time):
+        
+        self.cookedLevel += cooked_time    
+
+        if self.cookedLevel >=0 and self.cookedLevel<3:
+            self.cookedString = 'Raw'
+        elif self.cookedLevel >=3 and self.cookedLevel < 5:
+            self.cookedString = 'Halfcooked'
+        elif self.cookedLevel >=5 and self.cookedLevel < 8:
+            self.cookedString = 'cooked'
+        elif self.cookedLevel >=8:
+            self.cookedString = 'Charred'
+    def addCondiments(self,item):
+        self.condiments.append(item) 
+
+#build an object of sweet potato
+sweet_potato = SweetPotato()
+print(sweet_potato)
+#start to cook
+sweet_potato.cook(1)
+print (sweet_potato)
+sweet_potato.cook(1)
+print (sweet_potato)
+sweet_potato.addCondiments('garlic')
+
+sweet_potato.cook(1)
+print (sweet_potato)
+sweet_potato.cook(1)
+print (sweet_potato)
+sweet_potato.cook(1)
+print (sweet_potato)
+sweet_potato.addCondiments('tomato sauce')
+sweet_potato.cook(1)
+print (sweet_potato)
+sweet_potato.addCondiments('cumin')
+sweet_potato.cook(1)
+print (sweet_potato)
+sweet_potato.cook(1)
+sweet_potato.addCondiments('mustard')
+print (sweet_potato)
+
